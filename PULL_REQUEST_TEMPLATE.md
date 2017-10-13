@@ -1,18 +1,20 @@
-## What is this PR supposed to change?
+## What did you change?
 
-> Describe, what this PR does
+> Describe the changes introduced by this PR.
+>
+> Fixes # (issue, if applicable)
 
-## How can i test the changes?
+## How can others test the changes?
 
-> describe, how someone can test the changes of this PR (Remove this section for typoes etc.).
+> Describe how others can test your changes (you can remove this section for typo fixes etc.)
 
 ## PR-Checklist
 
-Please tick of this checklist after creating the PR:
+Please check the boxes in this list after submitting your PR:
 
-- [ ] This PR can be merged **now** (if not, add "WIP:" to the title).
-- [ ] I tested **all** the changes of this PR.
-- [ ] I reviewed this PR again **myself** (I also checked for typos, logos etc.).
-- [ ] I merged `develop` into my branch when i created this PR.
-- [ ] I did **not add any other changed** than described above.
-- [ ] I mentioned all other **PRs, that are related to this one**.
+- [ ] You can merge this PR **right now** (if not, please prefix the title with "WIP: ")
+- [ ] I've tested **all** changes included in this PR.
+- [ ] I've also reviewed this PR myself before submitting (e.g. for scrambled letters, typos, etc.)
+- [ ] I've merged the `develop` branch into my branch before finishing this PR.
+- [ ] I've **not added any other changes** than the ones described above.
+- [ ] I've mentioned all **PRs, which relate to this one**
