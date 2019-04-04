@@ -2,36 +2,35 @@
 
 ## Prerequisites
 
-The following is required to run these scripts:
+The following is required to run the setup:
 - A UNIX Shell (You can use `git bash` on windows)
 - A working `npm` installation that contains the `meta` tool.
     - Install meta globally with `npm install -g meta`
 
-If you do not know about meta, it is recommended that you read [this](https://www.npmjs.com/package/meta) first.
-
 This guide assumes that you have a basic understanding on how meta works.
+
+If you do not know about meta, it is recommended that you read [this](https://www.npmjs.com/package/meta) first.
 
 ## Contents
 
 This setup consist of three files:
-- `.meta` - `Contains a list of all the meta setups we currently use (see below).
-- `initial_setup.sh` - Performs the initial `git clone` for every repository
+ - `.meta` - Contains a list of all the meta setups we currently use (see below).
+ - `initial_setup.sh` - Performs the initial `git clone` for every repository
 in every meta setup.
-- `update_all.sh` - Performs a `git pull` and `git fetch` for every repository
+ - `update_all.sh` - Performs a `git pull` and `git fetch` for every repository
 in every meta setup, allowing you to update the entire ProcessEngine
 with a single command.
 
 ## The meta setups
 
-We use a number of so-called `meta setups` to group our github repositories
-into a proper context.
+We use a number of so-called `meta setups` to group our github repositories.
 
-Each of these setups is its own github repository and contains a `.meta` file
+Each of these setups is a github repository and contains a `.meta` file
 that lists all the repositories it requires.
 
 For example:
 The [`consumer_api_meta`](https://github.com/process-engine/consumer_api_meta) repository has a [.meta](https://github.com/process-engine/consumer_api_meta/blob/develop/.meta) file,
-which lists all the github repositories belonging to the Consumer API.
+which lists all the github repositories that make up the Consumer API.
 
 We currently employ the following meta setups:
  - `bpmn-studio_meta`
@@ -47,7 +46,7 @@ We currently employ the following meta setups:
  - `process_engine_meta`
  - `token_history_api_meta`
 
-In addition, the initial meta file contains the following separate repositories:
+In addition, the setup's `.meta` file contains the following separate repositories:
  - `documentation`
  - `identity_server`
  - `process_engine_runtime`
@@ -75,7 +74,7 @@ the following:
 - Clear out all existing `node_modules`
 - Clear the npm cache
 - Run `npm install` and `npm build` for every Typescript package
-- Run `dotnet restore` and `dotnet build` for every .NET package (Consumer API only)
+- For the Consumer API: Run `dotnet restore` and `dotnet build` for every .NET package
 
 So to install any of the meta setups, you only need to run `npm run reinstall`
 from within the corresponding `*_meta` folder.
