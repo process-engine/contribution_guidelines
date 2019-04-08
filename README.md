@@ -18,7 +18,7 @@ to update them!
 
 `ProcessEngine` consists of a great number of GitHub repositories.
 
-These Repositories are not exclusively contained in the `@process-engine`
+These repositories are not exclusively contained in the `@process-engine`
 organisation, but also in `@essential-projects`.
 
 The main difference between these organisations is:
