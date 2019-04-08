@@ -3,23 +3,23 @@
 ## Prerequisites
 
 The following is required to run the setup:
+
 - A UNIX Shell (You can use `git bash` on windows)
 - A working `npm` installation that contains the `meta` tool.
     - Install meta globally with `npm install -g meta`
 
-This guide assumes that you have a basic understanding on how meta works.
-
-If you do not know about meta, it is recommended that you read [this](https://www.npmjs.com/package/meta) first.
+This guide assumes that you have a basic understanding about the way [meta](https://www.npmjs.com/package/meta) works.
 
 ## Contents
 
 This setup consist of three files:
- - `.meta` - Contains a list of all the meta setups we currently use (see below).
- - `initial_setup.sh` - Performs the initial `git clone` for every repository
+
+- `.meta` - Contains a list of all meta setups we currently use (see below).
+- `initial_setup.sh` - Performs an initial `git clone` for every repository
 in every meta setup.
- - `update_all.sh` - Performs a `git pull` and `git fetch` for every repository
-in every meta setup, allowing you to update the entire ProcessEngine
-with a single command.
+- `update_all.sh` - Performs a `git pull` and `git fetch` for every repository
+in every meta setup, allowing you to update all repositories with a single
+command.
 
 ## The meta setups
 
@@ -33,23 +33,25 @@ The [`consumer_api_meta`](https://github.com/process-engine/consumer_api_meta) r
 which lists all the github repositories that make up the Consumer API.
 
 We currently employ the following meta setups:
- - `bpmn-studio_meta`
- - `consumer_api_meta`
- - `deployment_api_meta`
- - `essential_projects_meta`
- - `external_task_api_meta`
- - `kpi_api_meta`
- - `logging_api_meta`
- - `management_api_meta`
- - `metrics_api_meta`
- - `persistence_api_meta`
- - `process_engine_meta`
- - `token_history_api_meta`
+
+- `bpmn-studio_meta`
+- `consumer_api_meta`
+- `deployment_api_meta`
+- `essential_projects_meta`
+- `external_task_api_meta`
+- `kpi_api_meta`
+- `logging_api_meta`
+- `management_api_meta`
+- `metrics_api_meta`
+- `persistence_api_meta`
+- `process_engine_meta`
+- `token_history_api_meta`
 
 In addition, the setup's `.meta` file contains the following separate repositories:
- - `documentation`
- - `identity_server`
- - `process_engine_runtime`
+
+- `documentation`
+- `identity_server`
+- `process_engine_runtime`
 
 ## How to use the scripts
 
@@ -61,9 +63,7 @@ In addition, the setup's `.meta` file contains the following separate repositori
     - All meta setups will now be cloned locally
     - After that, all repositories are cloned into the individual meta setups
 
-Given the great number of repositories we use, this can take a few minutes.
-
-Go get a coffee or something.
+Given the great number of repositories we use, this may take a minute or two.
 
 After this script has finished, you are good to go!
 
@@ -71,9 +71,10 @@ After this script has finished, you are good to go!
 
 All the meta setups contain an npm script named `reinstall`, which performs
 the following:
+
 - Clear out all existing `node_modules`
 - Clear the npm cache
-- Run `npm install` and `npm build` for every Typescript package
+- Run `npm install` and `npm build` for every TypeScript package
 - For the Consumer API: Run `dotnet restore` and `dotnet build` for every .NET package
 
 So to install any of the meta setups, you only need to run `npm run reinstall`
@@ -87,7 +88,7 @@ execute with `npm run reinstall`.
 
 To update your local setup, simply run `./update_all.sh`.
 
-The script will perform the `git pull && git fetch -p --all` command over every
-repository in every meta setup.
+This script will update every repository in every meta setup.
 
-Time for another coffee.
+Again, running this script may take a minute or two, due to the large number
+of GitHub requests involved here.

@@ -1,12 +1,13 @@
-# contribution_guidelines
+# Contribution Guidelines
 
 Guidelines and templates for contribution
 
 ## Templates
 
-We use the following github templates:
-- [Issue Template](./gitub/ISSUE_TEMPLATE.md)
-- [Pull Request Template](./gitub/PULL_REQUEST_TEMPLATE.md)
+We use the following GitHub templates:
+
+- [Issue Template](./github/ISSUE_TEMPLATE.md)
+- [Pull Request Template](./github/PULL_REQUEST_TEMPLATE.md)
 
 The versions stored in this repository should be considered canon.
 
@@ -15,22 +16,22 @@ to update them!
 
 ## Organisation
 
-The ProcessEngine consists of a great number of github repositories.
+`ProcessEngine` consists of a great number of GitHub repositories.
 
 These Repositories are not exclusively contained in the `@process-engine`
 organisation, but also in `@essential-projects`.
 
 The main difference between these organisations is:
+
+- `@process-engine` contains all *professional* modules that make up
+`ProcessEngine` and `BPMN-Studio`.
 - `@essential-projects` contains all *technical* modules,
-which the ProcessEngine requires for its basic functionalities
+which the `ProcessEngine` requires for its basic functionality
 (i.e. bootstrapping, HttpServer, Socket.IO handling, etc.).
-- `@process-engine` contains all *professional* modules that make up the
-ProcessEngine and BPMN-Studio. This includes the Studio itself,
-the core packages and all the APIs from every domain.
 
 ## Setup & Repository Management
 
-We provide scripts to automatically setup and update the ProcessEngine
-and BPMN-Studio.
+We provide scripts to automatically setup and update `ProcessEngine` and
+`BPMN-Studio`.
 
 You can find these scripts and a manual on how to use them [here](./scripts/setup).
