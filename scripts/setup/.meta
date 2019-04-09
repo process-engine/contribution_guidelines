@@ -1,0 +1,19 @@
+{
+  "projects": {
+    "documentation": "git@github.com:process-engine/documentation.git",
+    "identity_server": "git@github.com:process-engine/identity_server.git",
+    "essential_projects_meta": "git@github.com:essential-projects/essential_projects_meta.git",
+    "deployment_api_meta": "git@github.com:process-engine/deployment_api_meta.git",
+    "kpi_api_meta": "git@github.com:process-engine/kpi_api_meta.git",
+    "metrics_api_meta": "git@github.com:process-engine/metrics_api_meta.git",
+    "logging_api_meta": "git@github.com:process-engine/logging_api_meta.git",
+    "token_history_api_meta": "git@github.com:process-engine/token_history_api_meta.git",
+    "persistence_api_meta": "git@github.com:process-engine/persistence_api_meta.git",
+    "management_api_meta": "git@github.com:process-engine/management_api_meta.git",
+    "consumer_api_meta": "git@github.com:process-engine/consumer_api_meta.git",
+    "external_task_api_meta": "git@github.com:process-engine/external_task_api_meta.git",
+    "process_engine_meta": "git@github.com:process-engine/process_engine_meta.git",
+    "process_engine_runtime": "git@github.com:process-engine/process_engine_runtime.git",
+    "bpmn-studio_meta": "git@github.com:process-engine/bpmn-studio_meta.git"
+  }
+}
