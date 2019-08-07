@@ -36,22 +36,18 @@ We currently employ the following meta setups:
 
 - `bpmn-studio_meta`
 - `consumer_api_meta`
-- `deployment_api_meta`
-- `essential_projects_meta`
-- `external_task_api_meta`
-- `kpi_api_meta`
-- `logging_api_meta`
 - `management_api_meta`
-- `metrics_api_meta`
-- `persistence_api_meta`
-- `process_engine_meta`
-- `token_history_api_meta`
+- `process_engine_core_meta`
+- `runtime_layer_meta`
+- `essential_projects_meta`
 
 In addition, the setup's `.meta` file contains the following separate repositories:
 
-- `documentation`
-- `identity_server`
 - `process_engine_runtime`
+- `process_engine_client`
+- `identity_server`
+- `ci_tools`
+- `contribution_guidelines`
 
 ## How to use the scripts
 
