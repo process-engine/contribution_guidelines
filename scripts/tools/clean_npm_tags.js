@@ -50,7 +50,7 @@ async function verifyPackageName() {
 
 async function findMatchingNpmTags() {
   console.log('Retrieving npm tags...');
-  const tagsAsString = await execCommand(`npm dist-tag ls ${branchPrefix}`);
+  const tagsAsString = await execCommand(`npm dist-tag ls ${packageName}`);
 
   const allTags = tagsAsString.split('\n');
 
