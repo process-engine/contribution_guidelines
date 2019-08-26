@@ -5,6 +5,15 @@ const exec = require('child_process').exec;
 // All tags older than this date will be deleted.
 const cutOffDate = new Date('2019-07-16');
 
+fetchTagsFromRemote()
+  .then(getAllTags)
+  .then(removeTags);
+
+async function fetchTagsFromRemote() {
+  console.log('Sync local tag list with remote solution...');
+  await execCommand('git fetch -p');
+}
+
 async function getAllTags() {
 
   const command = 'git log --tags --simplify-by-decoration --pretty="format:%ai %d"';
@@ -45,14 +54,18 @@ async function getAllTags() {
   }
 
   console.log(`Found ${flattenedResults.length} matching tags`);
-  for (const tag of flattenedResults) {
-    console.log(tag);
-  }
+  flattenedResults.forEach((tag) => console.log(tag));
 
   return flattenedResults;
 }
 
-async function removeTags(tagsToRemove) {
+async function removeTags(tagsToRemove) {  
+  
+  if (tagsToRemove.length === 0) {
+    console.log('Nothing to do here. Exiting.');
+    process.exit(0);
+  }
+  
   console.log('TAGS TO REMOVE');
   console.log(tagsToRemove);
 
@@ -66,21 +79,12 @@ async function removeTags(tagsToRemove) {
 }
 
 async function execCommand(command) {
-  return new Promise((resolve) => {
-    exec(command, (err, stdin, stderr) => {
-      return resolve(stdin);
+  return new Promise((resolve, reject) => {
+    exec(command, (error, stdout, stderr) => {
+      if (error) {
+        return reject(error);
+      }
+      resolve(stdout)
     });
   });
 }
-
-console.log('Fetching tags...');
-execCommand('git fetch')
-  .then(() => {
-    return getAllTags();
-  })
-  .then((tagsToRemove) => {
-    if (tagsToRemove.length === 0) {
-      return;
-    }
-    return removeTags(tagsToRemove);
-  });
