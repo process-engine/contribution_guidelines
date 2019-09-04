@@ -3,7 +3,7 @@
 const exec = require('child_process').exec;
 
 // All tags older than this date will be deleted.
-const cutOffDate = new Date('2019-07-16');
+const cutOffDate = new Date('2019-09-05');
 
 fetchTagsFromRemote()
   .then(getAllTags)
@@ -33,8 +33,17 @@ async function getAllTags() {
     return [];
   }
 
-  const regExp = /v.*-pre.[^),]+/g
-  const matches = resultsWithMatchingDate.join('\n').match(regExp);
+  const regExpPre = /v.*-pre[^),]+/g
+  const regExpAlpha = /v.*-alpha[^),]+/g
+  const regExpBeta = /v.*-beta[^),]+/g
+  const preMatches = resultsWithMatchingDate.join('\n').match(regExpPre) || [];
+  const alphaMatches = resultsWithMatchingDate.join('\n').match(regExpAlpha) || [];
+  const betaMatches = resultsWithMatchingDate.join('\n').match(regExpBeta) || [];
+
+  let matches = [];
+  matches.push(...preMatches);
+  matches.push(...alphaMatches);
+  matches.push(...betaMatches);
 
   if (!matches || matches.length === 0) {
     console.log('No matching tags found');
@@ -59,13 +68,13 @@ async function getAllTags() {
   return flattenedResults;
 }
 
-async function removeTags(tagsToRemove) {  
-  
+async function removeTags(tagsToRemove) {
+
   if (tagsToRemove.length === 0) {
     console.log('Nothing to do here. Exiting.');
     process.exit(0);
   }
-  
+
   console.log('TAGS TO REMOVE');
   console.log(tagsToRemove);
 
