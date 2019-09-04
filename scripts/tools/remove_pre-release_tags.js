@@ -33,17 +33,8 @@ async function getAllTags() {
     return [];
   }
 
-  const regExpPre = /v.*-pre[^),]+/g
-  const regExpAlpha = /v.*-alpha[^),]+/g
-  const regExpBeta = /v.*-beta[^),]+/g
-  const preMatches = resultsWithMatchingDate.join('\n').match(regExpPre) || [];
-  const alphaMatches = resultsWithMatchingDate.join('\n').match(regExpAlpha) || [];
-  const betaMatches = resultsWithMatchingDate.join('\n').match(regExpBeta) || [];
-
-  let matches = [];
-  matches.push(...preMatches);
-  matches.push(...alphaMatches);
-  matches.push(...betaMatches);
+  const regExp = /v.*-(pre|alpha|beta)[^),]+/g
+  const matches = resultsWithMatchingDate.join('\n').match(regExp) || [];
 
   if (!matches || matches.length === 0) {
     console.log('No matching tags found');
