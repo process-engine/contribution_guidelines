@@ -5,8 +5,9 @@ const exec = require('child_process').exec;
 let packageName; // Set through environment variable.
 let branchPrefix = 'feature'; // Can be overwritten by environment variable.
 
-// This is to prevent the user from deleting tags like latest, alpha, beta or develop.
-const allowedTagNames = ['feature', 'hotfix', 'release'];
+// This is to prevent the user from deleting tags like latest, alpha or beta.
+// Note that develop has become obsolete with the introduction of the alpha and beta versions
+const allowedTagNames = ['feature', 'hotfix', 'release', 'betafix', 'develop'];
 
 readCommandLineArgs()
   .then(verifyPackageName)
