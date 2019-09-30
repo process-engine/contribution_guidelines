@@ -65,6 +65,11 @@ async function findMatchingNpmTags() {
   console.log(`Found ${plainTags.length} matching npm tags:`);
   plainTags.forEach((tag) => console.log(tag));
 
+  if (plainTags.length === 0) {
+    console.log('Nothing to do.');
+    process.exit(0);
+  }
+
   return plainTags;
 }
 
