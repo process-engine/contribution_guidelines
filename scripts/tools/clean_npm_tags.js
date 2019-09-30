@@ -1,5 +1,21 @@
 'use strict';
 
+/*
+*
+* This script will remove all tags on an npm repository with a matching prefix.
+* Does NOT work for the following tags:
+* - alpha
+* - beta
+* - latest
+*
+* Required Parameter(s):
+* PACKAGE_NAME: The exact name of the package as it is published at npm, including the organisation.
+*
+* Optional Parameter(s):
+* BRANCH_PREFIX: An expression with which the tags should start (i.e. feature~, release~, etc.).
+*                If not provided, "feature" is assumed
+*
+*/
 const exec = require('child_process').exec;
 
 let packageName; // Set through environment variable.
