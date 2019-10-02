@@ -3,7 +3,7 @@
 const exec = require('child_process').exec;
 
 // All tags older than this date will be deleted.
-const cutOffDate = new Date('2019-09-05');
+const cutOffDate = new Date('2019-10-02');
 
 fetchTagsFromRemote()
   .then(getAllTags)
@@ -33,7 +33,7 @@ async function getAllTags() {
     return [];
   }
 
-  const regExp = /v.*-(pre|alpha|beta)[^),]+/g
+  const regExp = /v\d.*-(pre|alpha|beta)[^),]+/g
   const matches = resultsWithMatchingDate.join('\n').match(regExp) || [];
 
   if (!matches || matches.length === 0) {
@@ -53,7 +53,7 @@ async function getAllTags() {
     }
   }
 
-  console.log(`Found ${flattenedResults.length} matching tags`);
+  console.log(`Found ${flattenedResults.length} matching tags to remove`);
   flattenedResults.forEach((tag) => console.log(tag));
 
   return flattenedResults;
@@ -65,9 +65,6 @@ async function removeTags(tagsToRemove) {
     console.log('Nothing to do here. Exiting.');
     process.exit(0);
   }
-
-  console.log('TAGS TO REMOVE');
-  console.log(tagsToRemove);
 
   const concattedTags = tagsToRemove.join(' ');
 
