@@ -23,3 +23,16 @@ node_modules
 .classpath
 .project
 .settings/
+
+Dockerfile
+Jenkinsfile
+.github
+.eslintignore
+.eslintrc
+.editorconfig
+reinstall.sh
+bpmn
+test
+src
+coverage
+tsconfig.json
