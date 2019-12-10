@@ -21,6 +21,12 @@ repositories=(
   '@process-engine/management_api_client'
   '@process-engine/process_engine_runtime'
   '@process-engine/process_engine_client'
+  '@process-engine/solutionexplorer.contracts'
+  '@process-engine/solutionexplorer.repository.contracts'
+  '@process-engine/solutionexplorer.repository.filesystem'
+  '@process-engine/solutionexplorer.repository.management_api'
+  '@process-engine/solutionexplorer.service'
+  '@process-engine/solutionexplorer.service.contracts'
 )
 
 tags=(
