@@ -15,6 +15,7 @@ repositories=(
   '@process-engine/consumer_api_core'
   '@process-engine/consumer_api_http'
   '@process-engine/consumer_api_client'
+  '@process-engine/external_task_api_client'
   '@process-engine/management_api_contracts'
   '@process-engine/management_api_core'
   '@process-engine/management_api_http'
